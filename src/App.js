@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import useModal from './hooks/useModal';
+import Modal from "./components/Modal";
+import "./index.css";
 
 function App() {
+  const {modelVisible, show} = useModal();
+  const text = {
+      title: 'Title',
+      message: 'Message',
+    }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="button-default" onClick={show}>
+        <p>Confirm</p>
+      </button>
+      <Modal
+        modelVisible={modelVisible}
+        hide={show}
+        text={text}
+      />
     </div>
   );
 }
