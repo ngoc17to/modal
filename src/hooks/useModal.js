@@ -1,13 +1,13 @@
 import {useState} from "react";
 
 const useModal = () => {
-    const [modelVisible, setModelVisible] = useState(false);
+    const [modalVisible, setmodalVisible] = useState(false);
     function show() {
-        setModelVisible(!modelVisible);
+        setmodalVisible(!modalVisible);
     }
     
     return {
-        modelVisible,
+        modalVisible,
         show,
     }
 }

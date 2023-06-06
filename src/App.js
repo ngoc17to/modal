@@ -4,7 +4,7 @@ import Modal from "./components/Modal";
 import "./index.css";
 
 function App() {
-  const {modelVisible, show} = useModal();
+  const {modalVisible, show} = useModal();
   const text = {
       title: 'Title',
       message: 'Message',
@@ -17,7 +17,7 @@ function App() {
         <p>Confirm</p>
       </button>
       <Modal
-        modelVisible={modelVisible}
+        modalVisible={modalVisible}
         hide={show}
         text={text}
       />

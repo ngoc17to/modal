@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import "../App.css";
 
-const Modal = ({modelVisible, hide, text}) => modelVisible ? ReactDOM.createPortal (
+const Modal = ({modalVisible, hide, text}) => modalVisible ? ReactDOM.createPortal (
   <div className="modal-container">
       <div className="modal-overlay"  onClick={hide}/>
       <div className="modal-wrapper">
