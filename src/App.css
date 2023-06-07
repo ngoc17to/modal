@@ -27,6 +27,7 @@ button{
   background-color: #686868;
   border: 0px;
   border-radius: 4px;
+  margin: 5px;
 }
 
 .button-default:hover{
@@ -103,12 +104,12 @@ button p{
 
 .close-button{
   border: none;
-  background-color: #d6d6d6;
+  background-color: transparent;
   padding: 0;
 }
 .close-button div{
   font-size: 30px; 
-  background-color: #d6d6d6;
+  background-color: transparent;
   width: 30px;
   height: 30px;
 }
@@ -133,4 +134,101 @@ button p{
 }
 .submit-button:hover{
   background-color: rgba(86, 110, 245, 0.9);
+}
+
+.success-button{
+  background-color: rgb(20, 180, 68);
+}
+.success-button:hover{
+  background-color: rgba(20, 180, 68, 0.75);
+}
+
+.warning-button{
+  background-color: rgb(255, 163, 26);
+}
+.warning-button:hover{
+  background-color: rgba(255, 163, 26, 0.75);
+}
+
+.error-button{
+  background-color: rgb(255, 99, 26);
+}
+.error-button:hover{
+  background-color: rgba(255, 99, 26, 0.75);
+}
+
+.toast-container{
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+.toast-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.success{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(20, 180, 68);
+  margin-top: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  animation: slide linear 0.2s;
+  box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.warning{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 163, 26);
+  margin-top: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  animation: slide linear 0.2s;
+  box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.error{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 99, 26);
+  margin-top: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  animation: slide linear 0.2s;
+  box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.toast-close-button div{
+  font-size: 25px; 
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
+  margin-right: 5px;
+}
+
+.toast-close-button div:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }
