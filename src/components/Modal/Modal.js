@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import "../App.css";
-import { useTheme } from "../ThemeContext";
+import "../../App.css";
+import "./Modal.css";
+import { useTheme } from "../../ThemeContext";
 
 const Modal = ({modalVisible, hide, text}) => {
   const {theme} = useTheme();
@@ -15,7 +16,7 @@ const Modal = ({modalVisible, hide, text}) => {
               <div className="modal-header">
                 <p style={{fontWeight: "bold", backgroundColor: "None"}}>{text.title}</p>
                 <button className="close-button" onClick={hide}>
-              <img src={require('../img/close_' + theme + '.png')} alt="close_btn"/>
+              <img src={require('../../img/close_' + theme + '.png')} alt="close_btn"/>
                 </button>
               </div>
               <div className="modal-message">

@@ -1,9 +1,9 @@
 import React from "react";
 import useModal from './hooks/useModal';
 import useToast from './hooks/useToast';
-import Modal from "./components/Modal";
-import Toast from "./components/Toast";
-import "./index.css";
+import Modal from "./components/Modal/Modal.js";
+import Toast from "./components/Toast/Toast.js";
+import "./App.css";
 import { useTheme } from "./ThemeContext";
 
 function App() {
