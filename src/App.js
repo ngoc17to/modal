@@ -4,8 +4,10 @@ import useToast from './hooks/useToast';
 import Modal from "./components/Modal";
 import Toast from "./components/Toast";
 import "./index.css";
+import { useTheme } from "./ThemeContext";
 
 function App() {
+  const {theme, toggleTheme} = useTheme();
   const {modalVisible, show} = useModal();
   const {addToastHandler, deleteToastHandler, toastList} = useToast();
   const text = {
@@ -28,6 +30,7 @@ function App() {
         modalVisible={modalVisible}
         hide={show}
         text={text}
+        theme = {theme}
       />
       <button 
         className="button-default success-button" 
@@ -47,7 +50,11 @@ function App() {
       <Toast
         toastList={toastList}
         deleteToast={deleteToastHandler}
+        theme = {theme}
       />
+      <button className="mode_btn" onClick={toggleTheme}>
+        <img src={require('./img/' + theme + '_mode.png')} alt="theme_mode"/>
+      </button>
     </div>
   );
 }

@@ -1,13 +1,52 @@
+.light-mode {
+  --text-color: #000;
+  --background-color: rgb(241, 245, 249);
+  --modal-color: rgb(226, 232, 240);
+  --modal-message-color:rgb(248, 250, 252);
+  --submit-btn-color: rgb(100, 116, 139);
+  --submit-hover-color: rgba(100, 116, 139, 0.95);
+  --submit-text-color: rgb(241, 245, 249);
+  --btn-color: rgb(241, 245, 249);
+  --btn-border-color: rgb(100, 116, 139);
+  --btn-hover-color: rgba(100, 116, 139, 0.95);
+  --success-btn-color: rgb(241, 245, 249);
+  --success-btn-hover-color: rgba(20, 180, 68, 0.95);
+  --success-color: rgb(20, 180, 68);
+  --warning-btn-color: rgb(241, 245, 249);
+  --warning-btn-hover-color: rgba(255, 163, 26, 0.95);
+  --warning-color: rgb(255, 163, 26);
+  --error-btn-color: rgb(241, 245, 249);
+  --error-btn-hover-color: rgba(255, 99, 26, 0.95);
+  --error-color: rgb(255, 98, 26);
+}
+.dark-mode {
+  --text-color: rgb(241, 245, 249);
+  --background-color: rgb(15, 23, 42);
+  --modal-color: rgb(30, 41, 59);
+  --modal-message-color:rgb(51, 65, 85);
+  --submit-btn-color: rgb(100, 116, 139);
+  --submit-hover-color: rgba(100, 116, 139, 0.9);
+  --submit-text-color: rgb(241, 245, 249);
+  --btn-color: rgb(100, 116, 139);
+  --btn-border-color: rgb(100, 116, 139);
+  --btn-hover-color: rgba(100, 116, 139, 0.9);
+  --success-btn-color: rgb(20, 180, 68);
+  --success-btn-hover-color: rgba(20, 180, 68, 0.9);
+  --success-color: rgb(20, 180, 68);
+  --warning-btn-color: rgb(255, 163, 26);
+  --warning-btn-hover-color: rgba(255, 163, 26, 0.9);
+  --warning-color: rgb(255, 163, 26);
+  --error-btn-color: rgb(255, 99, 26);
+  --error-btn-hover-color: rgba(255, 99, 26, 0.9);
+  --error-color: rgb(255, 98, 26);
+}
+:root{
+  background-color: var(--background-color);
+
+}
 .App {
   padding: 5px;
   box-sizing: border-box;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 @keyframes growth {
@@ -24,20 +63,20 @@ button{
 }
 
 .button-default{
-  background-color: #686868;
-  border: 0px;
+  background-color: var(--btn-color);
+  border: 2px solid var(--btn-border-color);
   border-radius: 4px;
   margin: 5px;
 }
 
 .button-default:hover{
-  background-color: rgba(0,0,0,0.5);
+  background-color: var(--btn-hover-color);
 }
 
 button p{
   padding: 7px;
   margin: 0;
-  color: white;
+  color: var(--text-color);
 }
 .modal-container{
   position: absolute;
@@ -56,7 +95,7 @@ button p{
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.3);;
 }
 .modal-wrapper{
   z-index: 1000;
@@ -70,7 +109,8 @@ button p{
   width: 450px;
   box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  overflow: hidden;    
+  overflow: hidden;
+  color: var(--text-color);
 }
 
 .modal-header{
@@ -78,7 +118,7 @@ button p{
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px 10px 20px;
-  background-color: #d6d6d6;
+  background-color: var(--modal-color);
   border-bottom: solid 1px rgba(165, 155, 155, 0.3);
   height: 30px;
 }
@@ -89,7 +129,7 @@ button p{
   padding: 20px;
   padding-left: 30px;
   height: fit-content;
-  background-color: white;
+  background-color: var(--modal-message-color);
 }
 
 .modal-footer{
@@ -97,7 +137,7 @@ button p{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #d6d6d6;
+  background-color: var(--modal-color);
   height: 40px;
   border-top: solid 1px rgba(165, 155, 155, 0.3);
 }
@@ -107,54 +147,61 @@ button p{
   background-color: transparent;
   padding: 0;
 }
-.close-button div{
-  font-size: 30px; 
+.close-button img{
   background-color: transparent;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
-.close-button div:hover{
+.close-button img:hover{
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .cancel-button{
   background-color: transparent;
   margin-right: 10px;
+  border: 0;
 }
 .cancel-button:hover{
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .submit-button{
-  background-color: #456bd4;
+  background-color:var(--submit-btn-color);
+  border: 0;
+}
+.submit-button p{
+  color: var(--submit-text-color);
 }
 .submit-button:hover{
-  background-color: rgba(86, 110, 245, 0.9);
+  background-color: var(--submit-hover-color);
 }
 
 .success-button{
-  background-color: rgb(20, 180, 68);
+  background-color: var(--success-btn-color);
+  border: 2px solid var(--success-color);
 }
 .success-button:hover{
-  background-color: rgba(20, 180, 68, 0.75);
+  background-color: var(--success-btn-hover-color);
 }
 
 .warning-button{
-  background-color: rgb(255, 163, 26);
+  background-color: var(--warning-btn-color); 
+  border: 2px solid var(--warning-color);
 }
 .warning-button:hover{
-  background-color: rgba(255, 163, 26, 0.75);
+  background-color: var(--warning-btn-hover-color);
 }
 
 .error-button{
-  background-color: rgb(255, 99, 26);
+  background-color: var(--error-btn-color);
+  border: 2px solid var(--error-color);
 }
 .error-button:hover{
-  background-color: rgba(255, 99, 26, 0.75);
+  background-color: var(--error-btn-hover-color);
 }
 
 .toast-container{
@@ -170,6 +217,7 @@ button p{
   align-items: flex-end;
   justify-content: flex-end;
   width: fit-content;
+  color: var(--text-color);
 }
 
 @keyframes slide {
@@ -185,7 +233,7 @@ button p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(20, 180, 68);
+  background-color: var(--success-color);
   margin-top: 5px;
   border-radius: 5px;
   padding-left: 10px;
@@ -197,7 +245,7 @@ button p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 163, 26);
+  background-color: var(--warning-color);
   margin-top: 5px;
   border-radius: 5px;
   padding-left: 10px;
@@ -209,7 +257,7 @@ button p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 99, 26);
+  background-color: var(--error-color);
   margin-top: 5px;
   border-radius: 5px;
   padding-left: 10px;
@@ -217,18 +265,25 @@ button p{
   box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.3);
 }
 
-.toast-close-button div{
-  font-size: 25px; 
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
+.toast-close-button img{
   margin-left: 8px;
   margin-right: 5px;
 }
 
-.toast-close-button div:hover{
+.toast-close-button img:hover{
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   width: 25px;
   height: 25px;
+}
+.mode_btn{
+  background-color: transparent;
+  border: 0;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.mode_btn img{
+  width: 40px;
+  height: 40px;
 }
