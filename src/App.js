@@ -3,8 +3,10 @@ import useModal from './hooks/useModal';
 import useToast from './hooks/useToast';
 import Modal from "./components/Modal/Modal.js";
 import Toast from "./components/Toast/Toast.js";
+import UploadImage from "./components/UploadImage/UploadImage";
 import "./App.css";
 import { useTheme } from "./ThemeContext";
+
 
 function App() {
   const {theme, toggleTheme} = useTheme();
@@ -55,6 +57,9 @@ function App() {
       <button className="mode_btn" onClick={toggleTheme}>
         <img src={require('./img/' + theme + '_mode.png')} alt="theme_mode"/>
       </button>
+      <UploadImage
+        src="./img/97.jpg"
+      ></UploadImage>
     </div>
   );
 }
